@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Filters */
+.filter-normal { filter: none; }
+.filter-grayscale { filter: grayscale(100%); }
+.filter-sepia { filter: sepia(100%); }
+.filter-vintage { filter: sepia(50%) contrast(120%) saturate(150%); }
+.filter-cool { filter: hue-rotate(180deg) saturate(150%); }
+.filter-high-contrast { filter: contrast(150%) saturate(120%); }
+.filter-invert { filter: invert(100%); }
+.filter-polaroid { filter: sepia(20%) contrast(110%) brightness(110%) saturate(130%) hue-rotate(-10deg); }
+.filter-cyber { filter: hue-rotate(90deg) saturate(200%) contrast(120%); }
+.filter-noir { filter: grayscale(100%) contrast(150%) brightness(90%); }
+/* Funny Filters */
+.filter-dizzy { filter: drop-shadow(6px 0px 0 rgba(255,0,0,0.5)) drop-shadow(-6px 0px 0 rgba(0,255,255,0.5)) contrast(150%); }
+.filter-alien { filter: hue-rotate(120deg) saturate(300%) contrast(150%) brightness(120%); }
+.filter-glitch { filter: sepia(100%) hue-rotate(280deg) saturate(300%) contrast(200%); }
+.filter-xray { filter: invert(100%) grayscale(100%) contrast(150%); }
+.filter-vhs { filter: contrast(120%) saturate(150%) sepia(20%) hue-rotate(-10deg) drop-shadow(3px 0 0 rgba(255,0,0,0.4)) drop-shadow(-3px 0 0 rgba(0,255,255,0.4)); }
+
+/* Hide Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.5);
+}
