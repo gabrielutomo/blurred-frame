@@ -40,5 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-backend/venv/
-backend/__pycache__/
+# backend (too heavy for vercel frontend deploy)
+backend/
